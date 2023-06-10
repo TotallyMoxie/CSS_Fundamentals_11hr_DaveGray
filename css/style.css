@@ -6,24 +6,19 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
-
-/* input, button {
-  font: inherit;
-} */
-
-p {
-  line-height: 1.5;
-  
+a {
+  color: hsl(207, 44%, 49%);
 }
 
+a:visited {
+  color: purple;
+}
 
+a:hover, a:focus {
+  color: hsl(207, 44%, 49%, 0.8);
+  background: gold;
+}
 
-
-
-
-
-
-
-
-
-
+a:active {
+  color: red;
+}
