@@ -7,10 +7,13 @@
   box-sizing: border-box;
 }
 
-
 /* || GENERAL STYLES */
 body {
   font-family: "Nunito", sans-serif;
   min-height: 100vh;
+}
+
+@media screen and (min-width: 481px) {
+
 }
 
