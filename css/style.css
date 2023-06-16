@@ -19,7 +19,9 @@ img {
 }
 
 /* || GENERAL STYLES */
-html { scroll-behavior: smooth;}
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   font: 1.5rem "Nunito", sans-serif;
@@ -51,11 +53,11 @@ nav {
   justify-content: space-evenly;
 }
 
-nav a, nav a:visited {
-  color: black;
+nav :is(a:link, a:visited) {
+  color: #000;
 }
 
-nav a:hover, nav a:focus {
+nav :is(a:hover, a:focus) {
   color: hsla(0, 0%, 20%, 0.6);
 }
 
@@ -85,6 +87,9 @@ footer {
   align-items: center;
 }
 
+.card:target {
+  border: 2px solid rebeccapurple;
+}
 
 .card figure {
   display: flex;
@@ -96,6 +101,14 @@ footer {
   border-radius: 50%;
 }
 
+.card img:not([alt]) {
+  border: 10px solid red;
+}
+
+.card:nth-child(even) {
+  background-color: papayawhip;
+}
+
 .card figcaption {
   font-weight: bolder;
   font-size: 2rem;
@@ -103,6 +116,33 @@ footer {
   text-align: center;
 }
 
+.card figcaption::before {
+  content: ' hello';
+  display: block;
+}
+
+/* .card figcaption::first-letter {
+  font-size: 3rem;
+} */
+
+.card p {
+  position: relative;
+}
+
+.card p::before {
+  content: open-quote;
+  font-size: 3em;
+  position: absolute;
+  top: -0.25em;
+  left: -0.5em;
+}
+.card p::after {
+  content: close-quote;
+  font-size: 3em;
+  position: absolute;
+  top: -0.25em;
+  right: -0.5em;
+}
 
 /* || SMALL */
 @media screen and (min-width: 576px) {
@@ -110,13 +150,12 @@ footer {
     justify-content: center;
     flex-flow: row wrap;
     padding: 1rem;
-
   }
   .card {
     width: min(100%, 400px);
   }
   .card:last-child {
-    order: -1
+    order: -1;
   }
 }
 
@@ -131,13 +170,9 @@ footer {
   .card figure {
     flex-flow: column-reverse;
   }
-  .card figcaption {
-    margin: 0.1em 0;
-  }
   .card p {
     margin-top: 1rem;
   }
-
 }
 
 /* || LARGE */
@@ -159,7 +194,9 @@ footer {
 
 /* || MOBILE DEVICE LANDSCAPE  */
 @media screen and (max-height: 425px) and (min-aspect-ratio: 7/4) {
-  h1 { font-size: 1.5rem; }
+  h1 {
+    font-size: 1.5rem;
+  }
 
   nav {
     display: none;
@@ -175,7 +212,8 @@ footer {
     width: min(calc(33% - 0.25rem), 200px);
   }
 
-  .card figcaption, .card p {
+  .card figcaption,
+  .card p {
     font-size: 1.25rem;
   }
 }
